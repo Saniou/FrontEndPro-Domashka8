@@ -10,10 +10,7 @@
 arr = [1, 2, 3, 4, 5, 6, 7];
 
 function removeElement(array, item){
-    if(array){
-        console.log(arr.splice(array, item))
-    } 
+    array.splice(item, 1) // array.splice(item-1, 1) Щоб номерація починалась з одиниці
 }
-removeElement(4, 1)
+removeElement(arr, 4)
 console.log(arr)
-
