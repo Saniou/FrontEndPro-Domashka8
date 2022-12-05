@@ -1,16 +1,71 @@
-// const array = [1, 2, 3, 4, 5, 6, 7];
-// removeElement(array, 5 );
-// console.log(array);
-// Результат: [1, 2, 3, 4, 6, 7]
+let users = [
+    {
+    "index": 0,
+    "isActive": true,
+    "balance": "$2,226.60",
+    "name": "Eugenia Sawyer",
+    "gender": "female",
+    "phone": "+1 (840) 583-3207",
+    "address": "949 John Street, Rose, Puerto Rico, 1857"
+    },
+    {
+    "index": 1,
+    "isActive": true,
+    "balance": "$2,613.77",
+    "name": "Pauline Gallegos",
+    "gender": "female",
+    "phone": "+1 (985) 593-3328",
+    "address": "328 Greenpoint Avenue, Torboy, North Dakota, 6857"
+    },
+    {
+    "index": 2,
+    "isActive": false,
+    "balance": "$3,976.41",
+    "name": "Middleton Chaney",
+    "gender": "male",
+    "phone": "+1 (995) 591-2478",
+    "address": "807 Fleet Walk, Brutus, Arkansas, 9783"
+    },
+    {
+    "index": 3,
+    "isActive": true,
+    "balance": "$1,934.58",
+    "name": "Burns Poole",
+    "gender": "male",
+    "phone": "+1 (885) 559-3422",
+    "address": "730 Seba Avenue, Osage, Alabama, 6290"
+    },
+    {
+    "index": 4,
+    "isActive": true,
+    "balance": "$3,261.65",
+    "name": "Mcfadden Horne",
+    "gender": "male",
+    "phone": "+1 (942) 565-3988",
+    "address": "120 Scholes Street, Kirk, Michigan, 1018"
+    },
+    {
+    "index": 5,
+    "isActive": false,
+    "balance": "$1,790.56",
+    "name": "Suzette Lewis",
+    "gender": "female",
+    "phone": "+1 (837) 586-3283",
+    "address": "314 Dunne Place, Bawcomville, Guam, 9053"
+    }
+    ]
+         
+users.forEach(function (element) {
+    const newBalance = element.balance.replaceAll('$', '').replaceAll(',', '');
 
-// const array = [1, 2, 3, 4, 5, 6, 7];
-// const removed = array.splice(4, 1)
-// console.log(array)
+    if (newBalance > 2000) {
+        console.log(element.phone)
+    }
+});
 
-arr = [1, 2, 3, 4, 5, 6, 7];
+let sumBalance = 0;
+users.forEach(sum => {
+    sumBalance += Number(sum.balance.replaceAll('$', '').replaceAll(',', ''));
+})
 
-function removeElement(array, item){
-    array.splice(item, 1) // array.splice(item-1, 1) Щоб номерація починалась з одиниці
-}
-removeElement(arr, 4)
-console.log(arr)
+console.log(sumBalance.toFixed(2))
